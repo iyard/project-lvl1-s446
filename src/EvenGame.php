@@ -5,6 +5,8 @@ namespace BrainGames\EvenGame;
 use function \cli\line;
 use function \cli\prompt;
 
+const TRY_MAX = 3;
+
 function run ()
 {
     line('Welcome to the Brain Game!');
@@ -25,8 +27,8 @@ function run ()
             break;
         }
         line('Correct!');
-    } while ($try < 3);
-    if ($try == 3) {
+    } while ($try < TRY_MAX);
+    if ($try == TRY_MAX) {
         line("Congratulations, %s!", $name);
     }
 }
