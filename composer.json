@@ -3,7 +3,8 @@
   "bin": [
     "bin/brain-games",
     "bin/brain-even",
-    "bin/brain-calc"
+    "bin/brain-calc",
+    "bin/brain-gcd"
   ],
   "authors": [
     {
@@ -24,7 +25,9 @@
       "src/Cli.php",
       "src/EvenGame.php",
       "src/Play.php",
-      "src/games/CalcGame.php"
+      "src/games/CalcGame.php",
+      "src/games/GcdGame.php"
+
     ]
   },
   "require": {
