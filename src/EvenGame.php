@@ -14,31 +14,21 @@ function run ()
     $name = prompt('May I have your name?');
     line("Hello, %s!", $name);
 
-    $try = 0;
-
-    do {
-        $try++;
+    for ($try = 0; $try < TRY_MAX; $try++) {
         $num = rand(1, 1001);
         line("Question: %s", $num);
         $answer = prompt('Your answer');
-        if (!isCorrectAnswer($num, $answer)) {
-            line("'%s' is wrong answer ;(. Correct answer was '%s'", $answer, getCorrectAnswer($num));
+        $correctAnswer = getCorrectAnswer($num);
+        if ($answer !== $correctAnswer) {
+            line("'%s' is wrong answer ;(. Correct answer was '%s'", $answer, $correctAnswer);
             line('Let\'s try again, Bill!');
             break;
         }
         line('Correct!');
-    } while ($try < TRY_MAX);
+    }
     if ($try == TRY_MAX) {
         line("Congratulations, %s!", $name);
     }
-}
-
-function isCorrectAnswer($num, $answer)
-{
-    if ((isEven($num) == true && $answer == 'yes') or (isEven($num) == false && $answer == 'no')) {
-        return true;
-    }
-    return false;
 }
 function isEven($num)
 {
@@ -46,8 +36,5 @@ function isEven($num)
 }
 function getCorrectAnswer($num)
 {
-    if (isEven($num)) {
-        return "yes";
-    }
-    return "no";
+    return isEven($num) ? "yes" : "no";
 }

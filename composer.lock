@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3ac7428e9497ebfde323c65a5a36dda6",
+    "content-hash": "5fd9fe3e166bb95341f3463fba9bd9a1",
     "packages": [
         {
             "name": "wp-cli/php-cli-tools",
@@ -112,7 +112,9 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "squizlabs/php_codesniffer": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],
