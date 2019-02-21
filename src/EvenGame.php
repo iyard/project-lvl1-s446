@@ -7,7 +7,7 @@ use function \cli\prompt;
 
 const TRY_MAX = 3;
 
-function run ()
+function run()
 {
     line('Welcome to the Brain Game!');
     line('Answer "yes" if number even otherwise answer "no".');
@@ -15,20 +15,17 @@ function run ()
     line("Hello, %s!", $name);
 
     for ($try = 0; $try < TRY_MAX; $try++) {
-        $num = rand(1, 1001);
-        line("Question: %s", $num);
+        $question = rand(1, 1001);
+        line("Question: %s", $question);
         $answer = prompt('Your answer');
-        $correctAnswer = getCorrectAnswer($num);
+        $correctAnswer = getCorrectAnswer($question);
         if ($answer !== $correctAnswer) {
             line("'%s' is wrong answer ;(. Correct answer was '%s'", $answer, $correctAnswer);
-            line('Let\'s try again, Bill!');
-            break;
+            return line('Let\'s try again, Bill!');
         }
         line('Correct!');
     }
-    if ($try == TRY_MAX) {
-        line("Congratulations, %s!", $name);
-    }
+    return line("Congratulations, %s!", $name);
 }
 function isEven($num)
 {
