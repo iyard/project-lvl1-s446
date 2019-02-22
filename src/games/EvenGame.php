@@ -10,7 +10,7 @@ function run()
     $getQuestionData = function () {
         return rand(1, 1001);
     };
-    $getQuestion = function($questionData) {
+    $getQuestion = function ($questionData) {
         return "{$questionData}";
     };
     $getCorrectAnswer = function ($questionData) {

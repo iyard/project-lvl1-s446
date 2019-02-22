@@ -15,7 +15,7 @@ function run()
         $num2 = rand(1, 99);
         return ['operation' => $operation, 'num1' => $num1, 'num2' => $num2];
     };
-    $getQuestion = function($questionData) {
+    $getQuestion = function ($questionData) {
         return "{$questionData['num1']} {$questionData['operation']} {$questionData['num2']}";
     };
     $getCorrectAnswer = function ($questionData) {
