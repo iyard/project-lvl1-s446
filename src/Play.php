@@ -5,21 +5,26 @@ namespace BrainGames\Play;
 use function \cli\line;
 use function \cli\prompt;
 
-function startGame($rules, $game)
+const TRY_MAX = 3;
+
+function startGame($description, $getQuestionData, $getQuestion, $getCorrectAnswer)
 {
     line('Welcome to the Brain Game!');
-    line($rules);
+    line($description);
     $name = prompt('May I have your name?');
     line("Hello, %s!", $name);
 
-    foreach ($game as $question) {
-        line("Question: %s", $question['question']);
+    for ($try = 0; $try < TRY_MAX; $try++) {
+        $questionData = $getQuestionData();
+        line("Question: %s", $getQuestion($questionData));
         $answer = prompt('Your answer');
-        $correctAnswer = $question['correctAnswer'];
+        $correctAnswer = $getCorrectAnswer($questionData);
         if ($answer != $correctAnswer) {
             line("'%s' is wrong answer ;(. Correct answer was '%s'", $answer, $correctAnswer);
-            return line("Let's try again, %s!", $name);
+            line("Let's try again, %s!", $name);
+            return false;
         }
     }
-    return line("Congratulations, %s!", $name);
+    line("Congratulations, %s!", $name);
+    return true;
 }
