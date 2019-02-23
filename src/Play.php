@@ -15,10 +15,7 @@ function startGame($description, $game)
     line("Hello, %s!", $name);
 
     for ($try = 0; $try < TRY_MAX; $try++) {
-        $gameData = $game();
-        $question = $gameData['question'];
-        $correctAnswer = $gameData['correctAnswer'];
-
+        ['question' => $question, 'correctAnswer' => $correctAnswer] = $game();
         line("Question: %s", $question);
         $answer = prompt('Your answer');
         if ($answer != $correctAnswer) {

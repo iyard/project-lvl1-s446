@@ -13,13 +13,12 @@ function run()
         $progression = [];
         $rate = rand(1, 10);
         $progressionStart = rand(1, 10);
-        $progression[0] = $progressionStart;
-        for ($i = 1; $i < PROGRESSION_LEN; $i++) {
-            $progression[$i] = $progression[$i - 1] + $rate;
+        for ($i = 0; $i < PROGRESSION_LEN; $i++) {
+            $progression[] = $progressionStart + $rate * $i;
         }
-        $missingIndex = rand(0, PROGRESSION_LEN - 1);
-        $correctAnswer = $progression[$missingIndex];
-        $progression[$missingIndex] = "..";
+        $hiddenElementIndex = rand(0, PROGRESSION_LEN - 1);
+        $correctAnswer = $progression[$hiddenElementIndex];
+        $progression[$hiddenElementIndex] = "..";
         $question = implode(" ", $progression);
         return ['question' => $question, 'correctAnswer' => $correctAnswer];
     };
