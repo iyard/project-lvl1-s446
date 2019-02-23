@@ -20,3 +20,4 @@ To see how to play - click on the link:
 * [brain-calc](http://asciinema.org/a/0v2M1cf5JI595jvaTHl9xTLkY)
 * [brain-gcd](http://asciinema.org/a/AtnCJyCKmL6iJnb5ggRSh98h7)
 * [brain-progression](http://asciinema.org/a/LIvXpMeCvi1ZBiLxfi6tu6fKS)
+* [brain-prime](http://asciinema.org/a/Em1FtRyqBucpLDVwhKBkqh3Wt)
