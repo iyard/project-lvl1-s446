@@ -2,7 +2,6 @@
 
 namespace BrainGames\Games\EvenGame;
 
-use function \cli\line;
 use function BrainGames\Play\startGame;
 
 const DESCRIPTION = 'Answer "yes" if number even otherwise answer "no".';
@@ -10,22 +9,17 @@ const DESCRIPTION = 'Answer "yes" if number even otherwise answer "no".';
 function run()
 {
     $game = function () {
-        $getQuestionData = function () {
-            return rand(1, 1001);
-        };
-        $getQuestion = function ($questionData) {
-            return "{$questionData}";
-        };
+        $questionData = rand(1, 1001);
+        $question = "{$questionData}";
         $getCorrectAnswer = function ($questionData) {
-            return $questionData % 2 === 0 ? "yes" : "no";
+            return isEven($questionData) ? "yes" : "no";
         };
-
-        $questionData = $getQuestionData();
-        $question = $getQuestion($questionData);
         $correctAnswer = $getCorrectAnswer($questionData);
         return ['question' => $question, 'correctAnswer' => $correctAnswer];
     };
+    startGame(DESCRIPTION, $game);
+}
 
-    $result = startGame(DESCRIPTION, $game);
-    line($result);
+function isEven ($num) {
+    return $num % 2 == 0;
 }

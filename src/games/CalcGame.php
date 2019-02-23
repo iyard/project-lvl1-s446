@@ -2,29 +2,20 @@
 
 namespace BrainGames\Games\CalcGame;
 
-use function \cli\line;
 use function BrainGames\Play\startGame;
 
 const DESCRIPTION = "What is the result of the expression?";
 const OPERATION_DIC = ['+', '-', '*'];
 
-
 function run()
 {
     $game = function () {
-        $getQuestionData = function () {
-            $operation = OPERATION_DIC[rand(0, 2)];
-            $num1 = rand(1, 99);
-            $num2 = rand(1, 99);
-            return ['operation' => $operation, 'num1' => $num1, 'num2' => $num2];
-        };
-        $getQuestion = function ($questionData) {
-            return "{$questionData['num1']} {$questionData['operation']} {$questionData['num2']}";
-        };
-        $getCorrectAnswer = function ($questionData) {
-            $num1 = $questionData['num1'];
-            $num2 = $questionData['num2'];
-            switch ($questionData['operation']) {
+        $num1 = rand(1, 99);
+        $num2 = rand(1, 99);
+        $operation = OPERATION_DIC[rand(0, 2)];
+        $question = "{$num1} {$operation} {$num2}";
+        $getCorrectAnswer = function ($num1, $num2, $operation) {
+            switch ($operation) {
                 case '+':
                     return $num1 + $num2;
                     break;
@@ -36,13 +27,8 @@ function run()
                     break;
             }
         };
-
-        $questionData = $getQuestionData();
-        $question = $getQuestion($questionData);
-        $correctAnswer = $getCorrectAnswer($questionData);
+        $correctAnswer = $getCorrectAnswer($num1, $num2, $operation);
         return ['question' => $question, 'correctAnswer' => $correctAnswer];
     };
-
-    $result = startGame(DESCRIPTION, $game);
-    line($result);
+    startGame(DESCRIPTION, $game);
 }

@@ -23,8 +23,9 @@ function startGame($description, $game)
         $answer = prompt('Your answer');
         if ($answer != $correctAnswer) {
             line("'%s' is wrong answer ;(. Correct answer was '%s'", $answer, $correctAnswer);
-            return "Let's try again, {$name}!";
+            line("Let's try again, %s", $name);
+            break;
         }
     }
-    return "Congratulations, {$name}!";
+    line("Congratulations, %s!", $name);
 }
