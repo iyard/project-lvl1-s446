@@ -20,7 +20,7 @@ function run()
         $missingIndex = rand(0, PROGRESSION_LEN - 1);
         $correctAnswer = $progression[$missingIndex];
         $progression[$missingIndex] = "..";
-        $question = implode (" ", $progression);
+        $question = implode(" ", $progression);
         return ['question' => $question, 'correctAnswer' => $correctAnswer];
     };
     startGame(DESCRIPTION, $game);
