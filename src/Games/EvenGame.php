@@ -11,10 +11,7 @@ function run()
     $game = function () {
         $questionData = rand(1, 1001);
         $question = "{$questionData}";
-        $getCorrectAnswer = function ($questionData) {
-            return isEven($questionData) ? "yes" : "no";
-        };
-        $correctAnswer = $getCorrectAnswer($questionData);
+        $correctAnswer = isEven($questionData) ? "yes" : "no";
         return ['question' => $question, 'correctAnswer' => $correctAnswer];
     };
     startGame(DESCRIPTION, $game);
