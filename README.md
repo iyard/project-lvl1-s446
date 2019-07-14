@@ -16,8 +16,8 @@ Make sure you have the composer bin dir in your PATH. The default value is `~/.c
 
 # How to play
 To see how to play - click on the link:
-* [brain-even](http://asciinema.org/a/A2ydsocXYb49HwOI0vCjo8wbH)
-* [brain-calc](http://asciinema.org/a/0v2M1cf5JI595jvaTHl9xTLkY)
-* [brain-gcd](http://asciinema.org/a/AtnCJyCKmL6iJnb5ggRSh98h7)
-* [brain-progression](http://asciinema.org/a/LIvXpMeCvi1ZBiLxfi6tu6fKS)
-* [brain-prime](http://asciinema.org/a/Em1FtRyqBucpLDVwhKBkqh3Wt)
+* [brain-even](https://asciinema.org/a/3SPQ9KgIEezHokwzFFfOVkQDc)
+* [brain-calc](https://asciinema.org/a/cHitCBVetaLYCIy4z0zdpDYWI)
+* [brain-gcd](https://asciinema.org/a/mb9F5aq5oc8g3CD6zVt7Y03K9)
+* [brain-progression](https://asciinema.org/a/m7C4DhQM4yCBsyGmIhjM9YqbK)
+* [brain-prime](https://asciinema.org/a/JsvtBzuRgrnVpYfQdBb4ZgGff)
